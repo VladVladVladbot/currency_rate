@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+{% if request.method == 'POST' %}
+    <h1>{{ count }} {{ cur_1 }} - {{ last_count }} {{ cur_2 }}</h1>
+{% else %}
+    <h1>Конвертер валют</h1>
+{% endif %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Перевести</button>
+</form>
+</body>
+</html>
