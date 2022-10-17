@@ -18,8 +18,8 @@ class Translate:
         self.render(count, count_1, count_2, last_count, context)
 
     def render(self, count, count_1, count_2, last_count, context):
-        [context.update({'cur_1': x[1]}) for x in currency if str(x[0]) == str(count_1)]
-        [context.update({'cur_2': x[1]}) for x in currency if str(x[0]) == str(count_2)]
+        context.update({'cur_1': x[1] for x in currency if str(x[0]) == str(count_1)})
+        context.update({'cur_2': x[1] for x in currency if str(x[0]) == str(count_2)})
 
         context.update(
             {
