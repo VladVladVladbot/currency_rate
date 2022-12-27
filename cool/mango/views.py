@@ -8,7 +8,7 @@ from .forms import *
 class ApiView(View):
     def get(self, request):
         context = {
-            'title': 'Конвертор валют',
+            'title': 'Currency rate',
             'form': CurrencyForm(),
         }
 
@@ -17,7 +17,7 @@ class ApiView(View):
     def post(self, request):
         form = CurrencyForm(request.POST)
         context = {
-            'title': 'Конвертор валют',
+            'title': 'Currency rate',
             'form': form,
         }
         if form.is_valid():
